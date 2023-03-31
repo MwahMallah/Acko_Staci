@@ -1,3 +1,5 @@
+from calculator_logic import Calc
+
 def test_can_add_two_numbers():
     pass
 
