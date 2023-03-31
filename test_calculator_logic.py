@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Test for IVS projekt 2, calculator.py
 
 import pytest
@@ -50,3 +51,16 @@ def test_factorial(self):
    self.assertEqual(calc.factorial(1), 1)
    self.assertEqual(calc.factorial(4), 24)
    self.assertEqual(calc.factorial(-7), "Error")
+=======
+from calculator_logic import Calc
+
+def test_can_add_two_numbers():
+    pass
+
+def test_can_sub_two_numbers():
+    calculator = Calc.add()
+    pass
+
+
+
+>>>>>>> ad1f6fb6eb3547d5adf2be5590c0a579ab458179
