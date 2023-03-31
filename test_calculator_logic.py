@@ -13,7 +13,7 @@ def test_sum(calculator):
    assert calculator.exec() ==  67
    calculator.take_expression("-7 + 7")
    assert calculator.exec() == 0
-#    self.assertEqual(calc.sum(-45, -45), -90)
+   self.assertEqual(calc.sum(-45, -45), -90)
 #    self.assertEqual(calc.sum(0, 0), 0)
 
 # def test_substaction(init_calc):
