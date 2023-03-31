@@ -11,6 +11,7 @@ def calculator():
 def test_sum(calculator):
    calculator.take_expression("59 + 8")
    assert calculator.exec() ==  67
+   assert calceulator.exec() ==  59
 #    self.assertEqual(calc.sum(-7, 7), 0)
 #    self.assertEqual(calc.sum(-45, -45), -90)
 #    self.assertEqual(calc.sum(0, 0), 0)
