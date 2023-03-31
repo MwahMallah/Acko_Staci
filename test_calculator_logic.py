@@ -86,4 +86,4 @@ def test_factorial(self):
    calculator.take_expression("4!")
    assert calculator.exec() == 24
    calculator.take_expression("-7!")
-   assert calculator.exec() == "Error"
+   assert calculator.exec() == TypeError
