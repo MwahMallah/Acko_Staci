@@ -19,42 +19,71 @@ def test_sum(calculator):
    assert calculator.exec() == 0
 
 def test_substaction(calculator):
-   self.assertEqual(calc.substaction(59, 9), 50)
-   self.assertEqual(calc.substaction(-7, 7), -14)
-   self.assertEqual(calc.substaction(-45, -45), 0)
-#    self.assertEqual(calc.substaction(0, 0), 0)
+   calculator.take_expression("59 - 9")
+   assert calculator.exec() == 50
+   calculator.take_expression("-7 - 7")
+   assert calculator.exec() == -14
+   calculator.take_expression("-45 - -45")
+   assert calculator.exec() == 0
+   calculator.take_expression("0 - 0")
+   assert calculator.exec() == 0
 
-# def test_multiplication(init_calc):
-#    self.assertEqual(calc.multiplication(59, 9), 531)
-#    self.assertEqual(calc.multiplication(-7, 7), -49)
-#    self.assertEqual(calc.multiplication(-45, 0), 0)
-#    self.assertEqual(calc.multiplication(543, 1), 543)
+def test_multiplication(init_calc):
+   calculator.take_expression("59 * 9")
+   assert calculator.exec() == 531
+   calculator.take_expression("-7 * 7")
+   assert calculator.exec() == -49
+   calculator.take_expression("-45 * 0")
+   assert calculator.exec() == 0
+   calculator.take_expression("543 * 1")
+   assert calculator.exec() == 543
 
-# def test_division(self):
-#    self.assertEqual(calc.division(59, 9), 6.555555555555555)
-#    self.assertEqual(calc.division(-7, 7), -1)
-#    self.assertEqual(calc.division(14, 7), 2)
-#    self.assertEqual(calc.division(-45, 0), "Error")
-#    self.assertEqual(calc.division(0, 78), 0)
+def test_division(self):
+   calculator.take_expression("59 / 9")
+   assert calculator.exec() == 6.555555555555555
+   calculator.take_expression("-7 / 7")
+   assert calculator.exec() == -1
+   calculator.take_expression("14 / 7")
+   assert calculator.exec() == 2
+   calculator.take_expression("-45 / 0")
+   assert calculator.exec() == "Error"
+   calculator.take_expression("0 / 78")
+   assert calculator.exec() == 0
 
-# def test_sqrt(self):
-#    self.assertEqual(calc.sqrt(84), 9.16515138991168)
-#    self.assertEqual(calc.sqrt(0), 0)
-#    self.assertEqual(calc.sqrt(1), 1)
-#    self.assertEqual(calc.sqrt(49), 7) 
-#    self.assertEqual(calc.sqrt(-7), "Error")
+def test_sqrt(self):
+   calculator.take_expression("sqrt(84)")
+   assert calculator.exec() == 9.16515138991168
+   calculator.take_expression("sqrt(0)")
+   assert calculator.exec() == 0
+   calculator.take_expression("sqrt(1)")
+   assert calculator.exec() == 1
+   calculator.take_expression("sqrt(49)")
+   assert calculator.exec() == 7
+   calculator.take_expression("sqrt(-7)")
+   assert calculator.exec() == "Error"
 
-# def test_square(self):
-#    self.assertEqual(calc.square(7, 2), 49)
-#    self.assertEqual(calc.square(0, 0), 0)
-#    self.assertEqual(calc.square(1, 1), 1)
-#    self.assertEqual(calc.square(2, 8), 256)
-#    self.assertEqual(calc.square(-7, 5), -16807)
-#    self.assertEqual(calc.square(15, -2), 0.00390625)
+def test_square(self):
+   calculator.take_expression("7^2")
+   assert calculator.exec() == 49
+   calculator.take_expression("0^0")
+   assert calculator.exec() == 0
+   calculator.take_expression("1^1")
+   assert calculator.exec() == 1
+   calculator.take_expression("2^8")
+   assert calculator.exec() == 256
+   calculator.take_expression("-7^5")
+   assert calculator.exec() == -16807
+   calculator.take_expression("15^-2")
+   assert calculator.exec() == 0.00390625
 
-# def test_factorial(self):
-#    self.assertEqual(calc.factorial(33), 8683317618811886495518194401280000000)
-#    self.assertEqual(calc.factorial(0), 1)
-#    self.assertEqual(calc.factorial(1), 1)
-#    self.assertEqual(calc.factorial(4), 24)
-#    self.assertEqual(calc.factorial(-7), "Error")
+def test_factorial(self):
+   calculator.take_expression("7!")
+   assert calculator.exec() == 5040
+   calculator.take_expression("0!")
+   assert calculator.exec() == 1
+   calculator.take_expression("1!")
+   assert calculator.exec() == 1
+   calculator.take_expression("4!")
+   assert calculator.exec() == 24
+   calculator.take_expression("-7!")
+   assert calculator.exec() == "Error"
