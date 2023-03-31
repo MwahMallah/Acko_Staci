@@ -20,8 +20,8 @@ def test_sum(calculator):
 
 def test_substaction(calculator):
    self.assertEqual(calc.substaction(59, 9), 50)
-#    self.assertEqual(calc.substaction(-7, 7), -14)
-#    self.assertEqual(calc.substaction(-45, -45), 0)
+   self.assertEqual(calc.substaction(-7, 7), -14)
+   self.assertEqual(calc.substaction(-45, -45), 0)
 #    self.assertEqual(calc.substaction(0, 0), 0)
 
 # def test_multiplication(init_calc):
