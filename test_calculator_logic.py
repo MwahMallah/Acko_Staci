@@ -50,9 +50,9 @@ def test_sum(calculator):
 #    self.assertEqual(calc.square(-7, 5), -16807)
 #    self.assertEqual(calc.square(15, -2), 0.00390625)
 
-# def test_factorial(self):
+def test_factorial(calculator):
 #    self.assertEqual(calc.factorial(33), 8683317618811886495518194401280000000)
 #    self.assertEqual(calc.factorial(0), 1)
 #    self.assertEqual(calc.factorial(1), 1)
-#    self.assertEqual(calc.factorial(4), 24)
-#    self.assertEqual(calc.factorial(-7), "Error")
+    calculator.take_expression("4 !")
+    assert calculator.exec() == 24
