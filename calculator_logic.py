@@ -15,6 +15,7 @@ class Calc():
 #!!!NEED TO WRITE parse() METHOD TO PARSE THROUGH WHOLE EXPRESSION AND CALLS FOR EXEC() EVERY TIME
 #FOR EXAMPLE: 2 + 3 * 4 = 14, first 3 * 4 executes
     def parse(self):
+        self.first_arg  = 1
         pass
 
 #executes expression
