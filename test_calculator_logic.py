@@ -13,11 +13,13 @@ def test_sum(calculator):
    assert calculator.exec() ==  67
    calculator.take_expression("-7 + 7")
    assert calculator.exec() == 0
-   self.assertEqual(calc.sum(-45, -45), -90)
-#    self.assertEqual(calc.sum(0, 0), 0)
+   calculator.take_expression("-45 + -45")
+   assert calculator.exec() == -90
+   calculator.take_expression("0 + 0")
+   assert calculator.exec() == 0
 
-# def test_substaction(init_calc):
-#    self.assertEqual(calc.substaction(59, 9), 50)
+def test_substaction(calculator):
+   self.assertEqual(calc.substaction(59, 9), 50)
 #    self.assertEqual(calc.substaction(-7, 7), -14)
 #    self.assertEqual(calc.substaction(-45, -45), 0)
 #    self.assertEqual(calc.substaction(0, 0), 0)
@@ -50,9 +52,9 @@ def test_sum(calculator):
 #    self.assertEqual(calc.square(-7, 5), -16807)
 #    self.assertEqual(calc.square(15, -2), 0.00390625)
 
-def test_factorial(calculator):
+# def test_factorial(self):
 #    self.assertEqual(calc.factorial(33), 8683317618811886495518194401280000000)
 #    self.assertEqual(calc.factorial(0), 1)
 #    self.assertEqual(calc.factorial(1), 1)
-    calculator.take_expression("4 !")
-    assert calculator.exec() == 24
+#    self.assertEqual(calc.factorial(4), 24)
+#    self.assertEqual(calc.factorial(-7), "Error")
