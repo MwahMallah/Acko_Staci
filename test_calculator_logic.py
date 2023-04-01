@@ -7,7 +7,8 @@ import math
 def calculator():
    calculator = Calc()
    return calculator
-   
+
+# tests for sum function, which will be sum of two numbers
 def test_sum(calculator):
    calculator.take_expression("59 + 8")
    assert calculator.exec() ==  67
@@ -18,6 +19,7 @@ def test_sum(calculator):
    calculator.take_expression("0 + 0")
    assert calculator.exec() == 0
 
+# tests for substract function, which will be substract of two numbers
 def test_substaction(calculator):
    calculator.take_expression("59 - 9")
    assert calculator.exec() == 50
@@ -28,6 +30,7 @@ def test_substaction(calculator):
    calculator.take_expression("0 - 0")
    assert calculator.exec() == 0
 
+# tests for multiplication function, which will be multiplication of two numbers
 def test_multiplication(init_calc):
    calculator.take_expression("59 * 9")
    assert calculator.exec() == 531
@@ -38,6 +41,7 @@ def test_multiplication(init_calc):
    calculator.take_expression("543 * 1")
    assert calculator.exec() == 543
 
+# tests for division function, which will be division of two numbers
 def test_division(self):
    calculator.take_expression("59 / 9")
    assert calculator.exec() == 6.555555555555555
