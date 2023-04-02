@@ -44,14 +44,13 @@ class Calc():
                 return self.first_arg * self.second_arg
             case "!":
                 return math.factorial(self.first_arg)
+            case "^":
+                return math.pow(self.first_arg, self.second_arg)
 
     def sqrt(self, a):
         # Function for sqrt, where a is number and result is sqrt of a
         return math.sqrt(a)
 
-    def pow(self, a, b):
-        # a is number and b is power, where result is a^b
-        return math.pow(a, b)
 
     def logarithm(self, number, base):
         return math.log(number, base)
