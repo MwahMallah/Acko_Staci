@@ -1,24 +1,23 @@
 import math
 
 
-class Calc():    
+class Calc():
     def __init__(self):
         self.first_arg = None
         self.second_arg = None
 
-#takes input from the calculator input line
-#and stores at the self.expression attribute of the object
+    # takes input from the calculator input line
+    # and stores at the self.expression attribute of the object
     def take_expression(self, expression):
         self.expression = expression
 
-
-#!!!NEED TO WRITE parse() METHOD TO PARSE THROUGH WHOLE EXPRESSION AND CALLS FOR EXEC() EVERY TIME
-#FOR EXAMPLE: 2 + 3 * 4 = 14, first 3 * 4 executes
+    # !!!NEED TO WRITE parse() METHOD TO PARSE THROUGH WHOLE EXPRESSION AND CALLS FOR EXEC() EVERY TIME
+    # FOR EXAMPLE: 2 + 3 * 4 = 14, first 3 * 4 executes
     def parse(self):
-        self.first_arg  = 1
+        self.first_arg = 1
         pass
 
-#executes expression
+    # executes expression
     def exec(self):
         list_of_args = self.expression.split()
         try:
@@ -50,7 +49,6 @@ class Calc():
     def sqrt(self, a):
         # Function for sqrt, where a is number and result is sqrt of a
         return math.sqrt(a)
-
 
     def logarithm(self, number, base):
         return math.log(number, base)
