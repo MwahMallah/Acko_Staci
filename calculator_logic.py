@@ -1,10 +1,27 @@
 import math
 
 
+def expression_to_list(expr):
+    list(expr)
+    list_split = list()
+    prev_numeric = ""
+    for i in expr:
+        if i.isnumeric():
+            prev_numeric += i
+        else:
+            list_split.append(prev_numeric)
+            prev_numeric = ""
+            list_split.append(i)
+    if prev_numeric != "":
+        list_split.append(prev_numeric)
+    return list_split
+
+
 class Calc():
     def __init__(self):
         self.first_arg = None
         self.second_arg = None
+        self.expression = None
 
     # takes input from the calculator input line
     # and stores at the self.expression attribute of the object
@@ -14,8 +31,11 @@ class Calc():
     # !!!NEED TO WRITE parse() METHOD TO PARSE THROUGH WHOLE EXPRESSION AND CALLS FOR EXEC() EVERY TIME
     # FOR EXAMPLE: 2 + 3 * 4 = 14, first 3 * 4 executes
     def parse(self):
-        self.first_arg = 1
+        self.expression = expression_to_list(self.expression)
+        # while len(self.expression) > 1:
+        #     pass
         pass
+        # return self.expression
 
     # executes expression
     def exec(self):
