@@ -28,16 +28,8 @@ def execute(arg1=None, arg2=None, operation=None):
     match operation:
         case "+":
             return arg1 + arg2
-    #     case "-":
-    #         return self.first_arg - self.second_arg
-    #     case "/":
-    #         return self.first_arg / self.second_arg
-    #     case "*":
-    #         return self.first_arg * self.second_arg
-    #     case "!":
-    #         return math.factorial(self.first_arg)
-    #     case "^":
-    #         return math.pow(self.first_arg, self.second_arg)
+        case "-":
+            return arg1 - arg2
 
 
 class Calc():
@@ -71,12 +63,22 @@ class Calc():
         #         elif brack_ctr > 0:
         #             brack_contents += list_item
 
-        # while "+" in self.expression:
-        op_index = self.expression.index("+")
-        self.expression[op_index] = execute(self.expression[op_index - 1],
-                                            self.expression[op_index + 1],
-                                            "+")
-        self.expression.pop(op_index - 1)
-        self.expression.pop(op_index)
+        while "+" in self.expression or "-" in self.expression:
+            if "+" in self.expression:
+                if "-" in self.expression:
+                    if self.expression.index("+") < self.expression.index("-"):
+                        op_index = self.expression.index("+")
+                    else:
+                        op_index = self.expression.index("-")
+                else:
+                    op_index = self.expression.index("+")
+            else:
+                op_index = self.expression.index("-")
+
+            self.expression[op_index] = execute(self.expression[op_index - 1],
+                                                self.expression[op_index + 1],
+                                                self.expression[op_index])
+            self.expression.pop(op_index - 1)
+            self.expression.pop(op_index)
 
         return self.expression
