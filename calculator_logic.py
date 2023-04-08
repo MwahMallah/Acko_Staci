@@ -9,12 +9,18 @@ def expression_to_list(expr):
         if i.isnumeric():
             prev_numeric += i
         else:
-            list_split.append(prev_numeric)
+            if prev_numeric != "":
+                list_split.append(prev_numeric)
             prev_numeric = ""
             list_split.append(i)
     if prev_numeric != "":
         list_split.append(prev_numeric)
     return list_split
+
+
+def remove_spaces_from_list(expr):
+    list_despaced = [i for i in expr if i != " "]
+    return list_despaced
 
 
 class Calc():
@@ -32,10 +38,11 @@ class Calc():
     # FOR EXAMPLE: 2 + 3 * 4 = 14, first 3 * 4 executes
     def parse(self):
         self.expression = expression_to_list(self.expression)
+        self.expression = remove_spaces_from_list(self.expression)
         # while len(self.expression) > 1:
         #     pass
         pass
-        # return self.expression
+        return self.expression
 
     # executes expression
     def exec(self):
