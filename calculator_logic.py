@@ -5,21 +5,21 @@ def expression_to_list(expr):
     list(expr)
     list_split = list()
     prev_numeric = ""
-    for i in expr:
-        if i.isnumeric():
-            prev_numeric += i
+    for list_char in expr:
+        if list_char.isnumeric():
+            prev_numeric += list_char
         else:
             if prev_numeric != "":
                 list_split.append(prev_numeric)
             prev_numeric = ""
-            list_split.append(i)
+            list_split.append(list_char)
     if prev_numeric != "":
         list_split.append(prev_numeric)
     return list_split
 
 
 def remove_spaces_from_list(expr):
-    list_despaced = [i for i in expr if i != " "]
+    list_despaced = [list_item for list_item in expr if list_item != " "]
     return list_despaced
 
 
@@ -39,9 +39,22 @@ class Calc():
     def parse(self):
         self.expression = expression_to_list(self.expression)
         self.expression = remove_spaces_from_list(self.expression)
-        # while len(self.expression) > 1:
-        #     pass
-        pass
+        brack_contents = list()
+        brack_ctr = 0
+        # while "(" in self.expression:
+        for list_item in self.expression:
+            if list_item == "(":
+                brack_ctr += 1
+            elif list_item == ")":
+                brack_ctr -= 1
+
+            if brack_ctr < 0:
+                pass  # error
+            if brack_ctr == 0 and brack_contents is not None:
+                brack_contents.pop(0)
+                pass  # přidat počítání v závorce
+            elif brack_ctr > 0:
+                brack_contents.append(list_item)
         return self.expression
 
     # executes expression
