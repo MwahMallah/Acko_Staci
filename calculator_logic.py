@@ -6,15 +6,15 @@ def expression_to_list(expr):
     list_split = list()
     prev_numeric = ""
     for list_char in expr:
-        if list_char.isnumeric():
+        if list_char.isnumeric() or list_char == ".":
             prev_numeric += list_char
         else:
             if prev_numeric != "":
-                list_split.append(int(prev_numeric))
+                list_split.append(float(prev_numeric))
             prev_numeric = ""
             list_split.append(list_char)
     if prev_numeric != "":
-        list_split.append(int(prev_numeric))
+        list_split.append(float(prev_numeric))
     return list_split
 
 
@@ -30,6 +30,10 @@ def execute(arg1=None, arg2=None, operation=None):
             return arg1 + arg2
         case "-":
             return arg1 - arg2
+        case "*":
+            return arg1 * arg2
+        case "/":
+            return arg1 / arg2
 
 
 class Calc():
@@ -74,6 +78,24 @@ class Calc():
                     op_index = self.expression.index("+")
             else:
                 op_index = self.expression.index("-")
+
+            self.expression[op_index] = execute(self.expression[op_index - 1],
+                                                self.expression[op_index + 1],
+                                                self.expression[op_index])
+            self.expression.pop(op_index - 1)
+            self.expression.pop(op_index)
+
+        while "*" in self.expression or "/" in self.expression:
+            if "*" in self.expression:
+                if "/" in self.expression:
+                    if self.expression.index("*") < self.expression.index("/"):
+                        op_index = self.expression.index("*")
+                    else:
+                        op_index = self.expression.index("/")
+                else:
+                    op_index = self.expression.index("*")
+            else:
+                op_index = self.expression.index("/")
 
             self.expression[op_index] = execute(self.expression[op_index - 1],
                                                 self.expression[op_index + 1],
