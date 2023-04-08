@@ -10,11 +10,17 @@ def expression_to_list(expr):
             prev_numeric += list_char
         else:
             if prev_numeric != "":
-                list_split.append(float(prev_numeric))
+                if "." in prev_numeric:
+                    list_split.append(float(prev_numeric))
+                else:
+                    list_split.append(int(prev_numeric))
             prev_numeric = ""
             list_split.append(list_char)
     if prev_numeric != "":
-        list_split.append(float(prev_numeric))
+        if "." in prev_numeric:
+            list_split.append(float(prev_numeric))
+        else:
+            list_split.append(int(prev_numeric))
     return list_split
 
 
@@ -67,24 +73,6 @@ class Calc():
         #         elif brack_ctr > 0:
         #             brack_contents += list_item
 
-        while "+" in self.expression or "-" in self.expression:
-            if "+" in self.expression:
-                if "-" in self.expression:
-                    if self.expression.index("+") < self.expression.index("-"):
-                        op_index = self.expression.index("+")
-                    else:
-                        op_index = self.expression.index("-")
-                else:
-                    op_index = self.expression.index("+")
-            else:
-                op_index = self.expression.index("-")
-
-            self.expression[op_index] = execute(self.expression[op_index - 1],
-                                                self.expression[op_index + 1],
-                                                self.expression[op_index])
-            self.expression.pop(op_index - 1)
-            self.expression.pop(op_index)
-
         while "*" in self.expression or "/" in self.expression:
             if "*" in self.expression:
                 if "/" in self.expression:
@@ -103,4 +91,22 @@ class Calc():
             self.expression.pop(op_index - 1)
             self.expression.pop(op_index)
 
-        return self.expression
+        while "+" in self.expression or "-" in self.expression:
+            if "+" in self.expression:
+                if "-" in self.expression:
+                    if self.expression.index("+") < self.expression.index("-"):
+                        op_index = self.expression.index("+")
+                    else:
+                        op_index = self.expression.index("-")
+                else:
+                    op_index = self.expression.index("+")
+            else:
+                op_index = self.expression.index("-")
+
+            self.expression[op_index] = execute(self.expression[op_index - 1],
+                                                self.expression[op_index + 1],
+                                                self.expression[op_index])
+            self.expression.pop(op_index - 1)
+            self.expression.pop(op_index)
+
+        return self.expression[0]
