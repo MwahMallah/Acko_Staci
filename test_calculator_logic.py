@@ -91,3 +91,13 @@ def test_factorial(calculator):
    assert calculator.parse() == 24
    calculator.take_expression("-7!")
    assert calculator.parse() == TypeError
+
+def test_expression(calculator):
+   calculator.take_expression("1 + 2*3")
+   assert calculator.parse() == 7
+   calculator.take_expression("12 + sqrt(16)")
+   assert calculator.parse() == 16
+   calculator.take_expression("2*4 + 48")
+   assert calculator.parse() == 56
+   calculator.take_expression("2*4 + (53 + 2)")
+   assert calculator.parse() == 63
