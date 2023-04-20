@@ -1,7 +1,5 @@
 from PyQt6.QtCore import Qt 
 
-import sys
-
 from PyQt6.QtWidgets import QApplication, QPushButton, QLineEdit, QMainWindow, QVBoxLayout, QGridLayout, QWidget
 
 
@@ -28,13 +26,13 @@ class Buttons(QWidget):
         ["1", "2", "3", "-", ")"],
         ["0", "00", ".", "+", "="]]
 
-        keymap = {}
+        self.keymap = {}
 
         for row, key in enumerate(keyboard):
             for column, btn in enumerate(key):
-                keymap[btn] = QPushButton(btn)
-                keymap[btn].setFixedSize(int(BUTTON_SIZE*1.5), BUTTON_SIZE)
-                layout.addWidget(keymap[btn], row, column)
+                self.keymap[btn] = QPushButton(btn)
+                self.keymap[btn].setFixedSize(int(BUTTON_SIZE*1.5), BUTTON_SIZE)
+                layout.addWidget(self.keymap[btn], row, column)
 
         self.setLayout(layout)
 
@@ -47,9 +45,9 @@ class CalculatorUI(QMainWindow):
 
         layout =  QVBoxLayout()
         self.display = Display()
-        buttons = Buttons()
+        self.buttons = Buttons()
         layout.addWidget(self.display)
-        layout.addWidget(buttons)
+        layout.addWidget(self.buttons)
 
         centralWidget.setLayout(layout)
 
@@ -58,16 +56,11 @@ class CalculatorUI(QMainWindow):
     def setDisplayLine(self, text):
         self.display.setText(text)
 
-    def deleteLine(self):
+    def deleteDisplayLine(self):
         self.setDisplayLine("")
 
     def getDisplayLine(self):
         return self.display.text()
 
 
-app = QApplication([])
 
-window = CalculatorUI()
-window.show()
-
-sys.exit(app.exec())
