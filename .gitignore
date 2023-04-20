@@ -29,3 +29,6 @@
 
 # Cache 
 __pycache__
+
+# IDE
+.idea/

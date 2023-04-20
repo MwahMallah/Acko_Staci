@@ -99,13 +99,16 @@ class Calc():
                     brack_ctr -= 1
                 if brack_ctr < 0:
                     pass  # error
-                if brack_ctr == 0 and brack_contents is not None:
+                if brack_ctr == 0 and brack_contents != "":
                     brack_contents = brack_contents[1:]
                     brack_sub = Calc()
                     brack_sub.take_expression(brack_contents)
+                    self.expression[pos_ctr] = brack_sub.parse()
+                    break
                 elif brack_ctr > 0:
                     brack_contents += str(list_item)
                     self.expression.pop(pos_ctr)
+                    pos_ctr -= 1
                 pos_ctr += 1
 
         while "!" in self.expression:
