@@ -182,3 +182,8 @@ class Calc():
             return int(self.expression[0])
         else:
             return self.expression[0]
+
+    def eval(self, text):
+        self.take_expression(text)
+        result = self.parse()
+        return str(result)
