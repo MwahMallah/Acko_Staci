@@ -10,10 +10,10 @@ Projekt IVS
 ------------------------------------------------------------------
 Ukoly:
 
-xarltt00	100	Mat. Operace
-xdubro01	100	Profiling, Instalatoru, pomoc s testy
-xsamoi00	100	Dokumentace, Testy
-xvolko02	100	GUI, Pomoc s mat. operace
+xarltt00		Mat. Operace, Debugging
+xdubro01		Profiling, Instalatoru, pomoc s testy
+xsamoi00		Dokumentace, Testy
+xvolko02		GUI
 ------------------------------------------------------------------
 
 •	Terminy:
