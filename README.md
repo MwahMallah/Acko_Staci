@@ -1,4 +1,5 @@
 Projekt do předmětu IVS, jednoduchá kalkulačka s uživatelským rozhraním.
+
 Prostredi
 ---------
 
