@@ -1,5 +1,5 @@
 ------------------------------------------------------------
-xarltt00	100	Mat. Operace
-xdubro01	100	Profiling, Instalator, pomoc s testy
-xsamoi00	100	Dokumentace, Testy, profiling
-xvolko02	100	GUI, Pomoc s mat. operace
+xarltt00	115	Mat. Operace, Debugging
+xdubro01	115	Installator, GUI
+xsamoi00	115	Dokumentace, Testy, profiling
+xvolko02	55	Makefile
