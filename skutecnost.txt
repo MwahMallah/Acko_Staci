@@ -1,0 +1,15 @@
+			TERMÍNY:                                                   SKUTEČNOST
+	17.3. Návrh a planovni implementace - všichni                    	- 17.3. - všichni
+	25.3. TDD pro matematickou knihovnu - xsmoi00, xdubro01           - 28.3. - xsamoi00, xdubro01
+	07.4. Programování kalkulačky - xarltt00                		- 10.4. - xarltt00
+	12.4. GUI Kalkulačky - xvolko02                         		- 15.4. - xdubro01
+	15.4. Profiling - xdubro01                              		- 20.4. - xsamoi00
+	18.4. Instalátor - xdubro01                             		- 22.4. - xdubro01
+	19.4. Makefile - xvolko02                    		  		- 23.4. - xvolko02
+	19.4. DEBUG - xarltt00                                  		- 22.4. - xarltt00
+	20.4. Dokumentace - xsamoi00                            		- 24.4. - xsamoi00, xvolko02
+	25.4. Odevzdání projektu - xsamoi00                     		- 25.4. - xsamoi00
+
+
+Kvůli velkému počtu projektů a půlsem. zkouškám, které šly za sebou, museli jsem posunout termíny a změnit úkoly pro některé členy týmu, 
+protože ne všichni zvládli vše stihnout.
