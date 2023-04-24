@@ -1,3 +1,4 @@
+Projekt do předmětu IVS, jednoduchá kalkulačka s uživatelským rozhraním.
 Prostredi
 ---------
 
@@ -7,7 +8,7 @@ Windows 64bit
 Autori
 ------
 
-Nazev tymu
+Nazev tymu - Ačkostačí
 - xdubro01 Maksim Dubrovin 
 - xsamoi00 Anastasiia Samoilova 
 - xvolk02 Ilya Volkov 

@@ -1,0 +1,19 @@
+2889.2154666256006
+         4020 function calls in 0.005 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     2005    0.001    0.000    0.002    0.000 calculator_logic.py:51(execute)
+     1001    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+     1001    0.000    0.000    0.000    0.000 {built-in method builtins.pow}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.003    0.003    0.003    0.003 {method 'read' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 codecs.py:319(decode)
+        1    0.001    0.001    0.002    0.002 profiling.py:8(<listcomp>)
+        1    0.000    0.000    0.002    0.002 profiling.py:5(derivation)
