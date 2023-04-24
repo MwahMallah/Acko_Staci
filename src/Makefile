@@ -8,6 +8,9 @@
 run: main.py gui.py calculator_logic.py
 	python3 main.py
 
+run_program: calculator.exe
+	./calculator.exe
+
 doc: Doxyfile
 	doxygen $<
 
