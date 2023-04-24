@@ -1,12 +1,12 @@
 # Python files do not need to be compiled. They are interpreted by the Python interpreter. Therefore, the makefile does not contain any compilation rules.
 
-.PHONY: all doc clean
+.PHONY: doc clean
 
-PROJECT=IVS2_Ackostaci
-AUTHORS= xdubro01_xsamoi00_xvolk02_xarltt00
+# PROJECT=IVS2_Ackostaci
+# AUTHORS= xdubro01_xsamoi00_xvolk02_xarltt00
 
-run:
-    python calculator_logic.py
+run: main.py gui.py calculator_logic.py
+	python3 main.py
 
 doc: Doxyfile
 	doxygen $<
@@ -16,4 +16,4 @@ profiling:
 
 clean:
 	rm -rf doc
-    rm *.pyc
+	rm *.pyc
