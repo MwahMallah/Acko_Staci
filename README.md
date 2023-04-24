@@ -17,4 +17,4 @@ Nazev tymu - Ačkostačí
 Licence
 -------
 
-Tento program je poskytovan...
+Tento program je poskytovan  GNU General Public Licence v3.0.
